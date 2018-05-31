@@ -16,7 +16,6 @@ with open(data_folder / 'rooms.json') as json_file:
 with open(data_folder / 'monsters.json') as json_file:
     dataMonsters = json.load(json_file)
 
-
 xpBudget = [200, 400, 600, 800, 1200, 1600, 2400, 3200, 4800]
 crLevels = [50, 65, 100, 135, 200, 400, 600, 800, 1200, 1600, 2400, 3200, 4800, 6400]
 goblinName1 = ["Black", "Green", "Raging", "Filthy", "Noxious", "Dread"]
@@ -133,7 +132,8 @@ class Lair:
             if room_type == "King":
                 self.seedMonster = {lair.goblinKing: 1}
             # TODO: Build a memory here to take out rooms that we've already put into the lair.
-            select_rooms = ([x for x in dataRooms["rooms"] if (x["type"] == self.type and x["minXP"] <= self.encounterXP)])
+            select_rooms = (
+            [x for x in dataRooms["rooms"] if (x["type"] == self.type and x["minXP"] <= self.encounterXP)])
             room = choice(select_rooms)
             if len(room) > 0:
                 self.titleText = room["titleText"]
@@ -278,7 +278,7 @@ class Lair:
             if len(self.treasureType) > 0:
                 for i, j in self.treasureType.items():
                     self.notes += treasure.build_horde(i, j)
-            self.monster_list = sorted(self.monster_list, key=lambda t: (t['xp'],t['monsterName']))
+            self.monster_list = sorted(self.monster_list, key=lambda t: (t['xp'], t['monsterName']))
             self.origin = ""
 
         def describe_encounter(self):
@@ -378,6 +378,7 @@ class Lair:
                         if lair.map[i][x1] < 1:
                             lair.map[i][x1] = 99
                 r += 1
+
         select_lairs = ([x for x in dataLairs["lairs"]])
         this_lair = choice(select_lairs)
         self.resourceAbundance = 6
@@ -385,7 +386,7 @@ class Lair:
         self.temperature = 4
         self.numberOfPlayers = 5
         self.totalLevels = 6
-        self.apl = int(self.totalLevels/self.numberOfPlayers)
+        self.apl = int(self.totalLevels / self.numberOfPlayers)
         if self.numberOfPlayers > 5:
             self.apl += 1
         if self.numberOfPlayers < 4:
@@ -397,7 +398,7 @@ class Lair:
         self.goblinKing = this_lair['goblinking']
         self.origin = this_lair['origin']
         self.notes = this_lair['notes']
-        self.maxRooms = int((random()*3)+4)
+        self.maxRooms = int((random() * 3) + 4)
         if self.maxRooms < 3:
             self.maxRooms = 3
         mapMod = (self.maxRooms - 6) * 20
@@ -429,14 +430,14 @@ class Lair:
             if x == 0:
                 room_type = "Entry"
                 room_budget += 1
-            elif x == self.maxRooms-1:
+            elif x == self.maxRooms - 1:
                 room_type = "King"
                 room_budget += 2
             else:
-                if random()*100 > 80:
+                if random() * 100 > 80:
                     room_type = "Setback"
                     room_budget += 1
-            self.encounter.append(self.Encounter(self, room_type,  xpBudget[room_budget], x + 1))
+            self.encounter.append(self.Encounter(self, room_type, xpBudget[room_budget], x + 1))
             if self.encounter[x].x2 > xmax:
                 xmax = self.encounter[x].x2
             if self.encounter[x].y2 > ymax:
@@ -454,7 +455,7 @@ class Lair:
         print("finished the html")
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     print("\n\n\n")
     myLair = Lair()
     print("I'm a lair! rawr!")
