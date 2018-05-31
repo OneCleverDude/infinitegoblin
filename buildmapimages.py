@@ -4,7 +4,9 @@ from pathlib import Path
 
 def print_map(lair):
     # Builds the map.png for the overview of the dungeon
-    im = Image.open('transparent.png')
+
+    data_folder = Path("mapassets/")
+    im = Image.open(data_folder / 'transparent.png')
     data_folder = Path("10pxFloor/")
     ch1 = Image.open(data_folder / 'map-crosshatch0.png')
     ch2 = Image.open(data_folder / 'map-crosshatch1.png')
@@ -27,7 +29,7 @@ def print_map(lair):
                     mapimage.paste(fl, position)
                 if int(lair.map[y][x]) < 99:
                     num_position = ((x * 10) - 28, (y * 10) - 28)
-                    data_folder = Path("40pxFloor/")
+                    data_folder = Path("mapassets/")
                     n1 = Image.open(data_folder / ("map-" + str(lair.map[y][x]) + ".png"))
                     mapimage.paste(n1, num_position)
                     data_folder = Path("10pxFloor/")

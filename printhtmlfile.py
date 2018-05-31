@@ -21,27 +21,28 @@ def build_html_page(lair):
 
 def print_rooms(lair):
     # Prints the rooms to HTML
+    data_folder = Path("htmltemplates/")
     path = 'skeletonheader.html'
-    with open(path) as h:
+    with open(data_folder / path) as h:
         header = h.read()
     path = 'template-monster-new.html'
-    with open(path) as mb:
+    with open(data_folder / path) as mb:
         monsterbody = mb.read()
     path = 'template-encounterfooter.html'
-    with open(path) as ef:
+    with open(data_folder / path) as ef:
         encounterfooter = ef.read()
     path = 'template.html'
-    with open(path) as b:
+    with open(data_folder / path) as b:
         body = b.read()
     ht = Template(header)
     header = ht.substitute(mapfile='map.png', goblinTribeName=lair.goblinTribeName, goblinGod=lair.goblinGod,
                            playerNum=lair.numberOfPlayers, APL=lair.apl, totalLevels=lair.totalLevels,
                            notes=lair.notes, origin=lair.origin)
     output_string = header
-
-    im = Image.open('transparent.png')
-    db = Image.open('floor_debug2.png')
-    data_folder = Path("40pxFloor/")
+    data_folder = Path("mapassets/")
+    im = Image.open(data_folder / 'transparent.png')
+    db = Image.open(data_folder / 'floor_debug2.png')
+    data_folder = Path("mapassets/")
     ch1 = Image.open(data_folder / 'map-crosshatch0.png')
     ch2 = Image.open(data_folder / 'map-crosshatch1.png')
 
@@ -132,14 +133,15 @@ def print_all_monsters(lair):
             all_monsters.append(lair.encounter[i].monster_list[j])
     all_print_monsters = list({v['monsterName']: v for v in all_monsters}.values())
     print_monsters = sorted(all_print_monsters, key=lambda t: (t['xp'], t['monsterName']))
+    data_folder = Path("htmltemplates/")
     path = 'template-monstercards-main.html'
-    with open(path) as mb:
+    with open(data_folder / path) as mb:
         monster_body = mb.read()
     path = 'template-monstercards-end.html'
-    with open(path) as mbe:
+    with open(data_folder / path) as mbe:
         monster_body_each = mbe.read()
     path = 'template-monstercards-attacks.html'
-    with open(path) as mba:
+    with open(data_folder / path) as mba:
         monster_body_each_attack = mba.read()
     counter = 0
     output_string = '<h2>Monster Index</h2><hr /><div class="row">'
@@ -191,7 +193,7 @@ def print_all_monsters(lair):
     output_string += '</div>'
 
     path = 'skeletonfooter.html'
-    with open(path) as f:
+    with open(data_folder / path) as f:
         footer = f.read()
     output_string = output_string + footer
     return output_string

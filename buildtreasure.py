@@ -1,8 +1,10 @@
 
 from random import *
 import json
+from pathlib import Path
 
-with open('items.json') as json_file:
+data_folder = Path("json/")
+with open(data_folder / 'items.json') as json_file:
     dataItems = json.load(json_file)
 
 

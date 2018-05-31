@@ -6,13 +6,14 @@ import json
 import statistics
 import buildtreasure as treasure
 import printhtmlfile as printhtml
+from pathlib import Path
 
-
-with open('lairs.json') as json_file:
+data_folder = Path("json/")
+with open(data_folder / 'lairs.json') as json_file:
     dataLairs = json.load(json_file)
-with open('rooms.json') as json_file:
+with open(data_folder / 'rooms.json') as json_file:
     dataRooms = json.load(json_file)
-with open('monsters.json') as json_file:
+with open(data_folder / 'monsters.json') as json_file:
     dataMonsters = json.load(json_file)
 
 
