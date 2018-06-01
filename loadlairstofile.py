@@ -4,9 +4,11 @@ data = {}
 data['lairs'] = []
 data['lairs'].append({
     'origin': 'Abandoned Dwarf Outpost',
+    'floor': 'Smooth Stone',
+    'structuremod': 0.85,
     'goblingod': 'Hadregash',
     'goblinking': 'Goblin King',
-    'wanderingMonsters': {"goblin warrior": 1, "goblin dog": 1},
+    'wanderingMonsters': {"goblin warrior": 1, "goblin archer": 1},
     'notes': '<p>This is a warrior tribe, goblins found here will be more likely to fight to the death than in other \
     goblin tribes.  Play the goblins as bloodthirsty and more courageous than normal at full health.  They will shout \
     insults at opponents to try to build up their own courage.  Play it up.</p><p>The ancient dwarf outpost has long \
@@ -16,6 +18,8 @@ data['lairs'].append({
 })
 data['lairs'].append({
     'origin': 'Natural Limestone Cave System',
+    'floor': 'Natural Stone',
+    'structuremod': 0.85,
     'goblingod': 'Resident Ogre',
     'goblinking': 'Ogre',
     'wanderingMonsters': {"goblin warrior": 1, "goblin archer": 1},
@@ -25,6 +29,8 @@ data['lairs'].append({
 })
 data['lairs'].append({
     'origin': 'Natural Limestone Cave System',
+    'floor': 'Natural Stone',
+    'structuremod': 0.85,
     'goblingod': 'Fire Elemental',
     'goblinking': 'Fire Elemental',
     'wanderingMonsters': {"goblin warrior": 1, "goblin archer": 1},
@@ -33,6 +39,8 @@ data['lairs'].append({
 })
 data['lairs'].append({
     'origin': 'Natural Limestone Cave System',
+    'floor': 'Natural Stone',
+    'structuremod': 0.85,
     'goblingod': 'Earth Elemental',
     'goblinking': 'Earth Elemental',
     'wanderingMonsters': {"goblin warrior": 1, "goblin archer": 1},
