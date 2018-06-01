@@ -132,8 +132,8 @@ class Lair:
             if room_type == "King":
                 self.seedMonster = {lair.goblinKing: 1}
             # TODO: Build a memory here to take out rooms that we've already put into the lair.
-            select_rooms = (
-            [x for x in dataRooms["rooms"] if (x["type"] == self.type and x["minXP"] <= self.encounterXP)])
+            select_rooms = ([x for x in dataRooms["rooms"] if (x["type"] == self.type and x["minXP"]
+                                                               <= self.encounterXP)])
             room = choice(select_rooms)
             if len(room) > 0:
                 self.titleText = room["titleText"]
@@ -156,6 +156,7 @@ class Lair:
             w = int(self.minX + random() * (self.maxX - self.minX + 1))
             h = int(self.minY + random() * (self.maxY - self.minY + 1))
             success = 0
+            preset_map = 0
             while success == 0:
                 collide = 0
                 x = int(randrange(10 * self.room_number, 10 * self.room_number + 10))
@@ -215,7 +216,7 @@ class Lair:
                                     else:
                                         lair.map[j][i] = 0
                                 else:
-                                    if y % 2 == 0:
+                                    if j % 2 == 0:
                                         lair.map[j][i] = 0
                                     else:
                                         lair.map[j][i] = -1
@@ -401,11 +402,11 @@ class Lair:
         self.maxRooms = int((random() * 3) + 4)
         if self.maxRooms < 3:
             self.maxRooms = 3
-        mapMod = (self.maxRooms - 6) * 20
-        if mapMod < 0:
-            mapMod = 0
-        self.MAP_WIDTH = 200 + mapMod
-        self.MAP_HEIGHT = 200 + mapMod
+        map_mod = (self.maxRooms - 6) * 20
+        if map_mod < 0:
+            map_mod = 0
+        self.MAP_WIDTH = 200 + map_mod
+        self.MAP_HEIGHT = 200 + map_mod
         xmax = 0
         ymax = 0
         # this tweaks how much it will look like a "cave"

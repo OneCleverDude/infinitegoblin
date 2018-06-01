@@ -4,6 +4,7 @@ from pathlib import Path
 import buildtreasure as treasure
 import buildmapimages as buildmap
 
+
 def build_html_page(lair):
     print("starting large map")
     buildmap.print_map(lair)
@@ -51,7 +52,8 @@ def print_rooms(lair):
         r = Template(body)
         room_text = r.substitute(titleText=lair.encounter[i].titleText, number=str(lair.encounter[i].room_number),
                                  subHead=lair.encounter[i].subHead,
-                                 flavor=lair.encounter[i].flavor, notes=lair.encounter[i].notes, roommap=str(i) + '.png')
+                                 flavor=lair.encounter[i].flavor, notes=lair.encounter[i].notes,
+                                 roommap=str(i) + '.png')
         output_string = output_string + room_text
         room_map_width = ((abs(lair.encounter[i].x2 - lair.encounter[i].x1) + 6) * 40)
         room_map_height = ((abs(lair.encounter[i].y2 - lair.encounter[i].y1) + 6) * 40)
@@ -158,10 +160,14 @@ def print_all_monsters(lair):
                                 will=print_monsters[i]['saves']['WILL'], str=print_monsters[i]['scores']['STR'],
                                 dex=print_monsters[i]['scores']['DEX'], con=print_monsters[i]['scores']['CON'],
                                 int=print_monsters[i]['scores']['INT'], wis=print_monsters[i]['scores']['WIS'],
-                                cha=print_monsters[i]['scores']['CHA'], strmod=(print_monsters[i]['scores']['STR']-10)//2,
-                                dexmod=(print_monsters[i]['scores']['DEX']-10)//2, conmod=(print_monsters[i]['scores']['CON']-10)//2,
-                                intmod=(print_monsters[i]['scores']['INT']-10)//2, wismod=(print_monsters[i]['scores']['WIS']-10)//2,
-                                chamod=(print_monsters[i]['scores']['CHA']-10)//2, flatfooted=print_monsters[i]['AC']['flatfooted'],
+                                cha=print_monsters[i]['scores']['CHA'],
+                                strmod=(print_monsters[i]['scores']['STR']-10)//2,
+                                dexmod=(print_monsters[i]['scores']['DEX']-10)//2,
+                                conmod=(print_monsters[i]['scores']['CON']-10)//2,
+                                intmod=(print_monsters[i]['scores']['INT']-10)//2,
+                                wismod=(print_monsters[i]['scores']['WIS']-10)//2,
+                                chamod=(print_monsters[i]['scores']['CHA']-10)//2,
+                                flatfooted=print_monsters[i]['AC']['flatfooted'],
                                 touch=print_monsters[i]['AC']['touch'], cmd=print_monsters[i]['AC']['cmd'],
                                 saves=print_monsters[i]['saves'], tactics=print_monsters[i]['tactics'],
                                 scores=print_monsters[i]['scores'], senses=print_monsters[i]['senses'],
