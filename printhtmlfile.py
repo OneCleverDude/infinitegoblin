@@ -3,7 +3,7 @@ from PIL import Image, ImageFilter
 from pathlib import Path
 import buildtreasure as treasure
 import buildmapimages as buildmap
-
+import pdfkit
 
 def build_html_page(lair):
     print("starting large map")
@@ -18,6 +18,10 @@ def build_html_page(lair):
     d.write(print_all_monsters(lair))
     print("finish writing all monsters")
     d.close()
+    config = pdfkit.configuration(wkhtmltopdf='M:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe')
+    options = {'viewport-size':'1024x768'}
+    pdfkit.from_file('demo.html', 'demo.pdf', configuration=config, options=options)
+
 
 
 def print_rooms(lair):
@@ -116,12 +120,12 @@ def print_rooms(lair):
                                    init=lair.encounter[i].monster_list[j]['init'],
                                    treasure=treasure_roll, tactics=lair.encounter[i].monster_list[j]['tactics'])
             output_string = output_string + mbtext
-            if counter > 4:
+            if counter > 3:
                 output_string = output_string + '</div><div class="row align-items-start">'
                 counter = 0
-        while counter < 5:
-            counter = counter + 1
-            output_string = output_string + ' <div class="col-md"></div>'
+        #while counter < 5:
+            #counter = counter + 1
+            #output_string = output_string + ' <div class="col-md-3 col-sm-5"></div>'
         output_string = output_string + encounterfooter
 
     return output_string

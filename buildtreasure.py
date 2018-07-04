@@ -1,4 +1,4 @@
-
+import unittest
 from random import *
 import json
 from pathlib import Path
@@ -7,6 +7,14 @@ data_folder = Path("json/")
 with open(data_folder / 'items.json') as json_file:
     dataItems = json.load(json_file)
 
+
+class TreasureTest(unittest.TestCase):
+    def test_horde_classes(self):
+        self.assertRegex(build_horde("A", 1), "Pouch with \d*gp, \d*sp, \d*cp, ")
+        self.assertRegex(build_horde("B", 1), "Sack of [a-zA-Z]* [(]\d*gp[)], ")
+        self.assertRegex(build_horde("C", 1), "Grade 1 Art Object, ")
+        self.assertRegex(build_horde("D", 1), "Sack of \d*gp, \d*sp, \d*cp, .*")
+        self.assertRegex(build_horde("H", 1), "Sack of \d*gp, \d*sp, \d*cp, .*")
 
 def build_horde(treasure_type, treasure_level):
 
@@ -222,3 +230,7 @@ def build_horde(treasure_type, treasure_level):
         treasure_horde += build_gems(gem_mod)
 
     return treasure_horde
+
+
+if __name__ == '__main__':
+    unittest.main()

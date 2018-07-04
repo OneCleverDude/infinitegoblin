@@ -1,2 +1,5 @@
-olefile==0.44
-Pillow==4.3.0
+Pillow==5.2.0
+olefile==0.45.1
+pdfkit==0.6.1
+pip==10.0.1
+setuptools==39.2.0

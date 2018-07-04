@@ -631,7 +631,7 @@ data['monsters'].append({
     'favor': 'It is a bat',
     'saves': {'FORT': 0, 'REF': 4, 'WILL': 2},
     'attacks': [
-        ['basic melee', '', 'bite', '+6', '1d3-4', '', '5ft']
+        ['basic melee', 'weapons_bite-128.png', 'bite', '+6', '1d3-4', '', '5ft']
     ],
     'crunch': 'Melee Attack: bite+6 attack, 1d3-4 Damage'
 })
@@ -663,8 +663,8 @@ data['monsters'].append({
                 force.',
     'saves': {'FORT': 8, 'REF': 5, 'WILL': 2},
     'attacks': [
-        ['basic melee', '', 'claws', '+7/+7', '1d6+5 (grab)', '', '5ft'],
-        ['basic melee', '', 'bite', '+7', '1d6+5', '', '5ft']
+        ['basic melee', 'weapons_claw-128.png', 'claws', '+7/+7', '1d6+5 (grab)', '', '5ft'],
+        ['basic melee', 'weapons_bite-128.png', 'bite', '+7', '1d6+5', '', '5ft']
     ],
     'crunch': 'Melee Attack: 2 claws +7 (1d6+5 plus grab), bite +7 attack, (1d6+5) Damage'
 })
@@ -693,7 +693,7 @@ data['monsters'].append({
     'favor': 'This lengthy, segmented horror writhes and twists, pulsing its venomous mandibles in search of prey.',
     'saves': {'FORT': 3, 'REF': 2, 'WILL': 0},
     'attacks': [
-        ['basic melee', '', 'bite', '+2', '1d6-1 (poison)', '', '5ft']
+        ['basic melee', 'weapons_bite-128.png', 'bite', '+2', '1d6-1 (poison)', '', '5ft']
     ],
     'crunch': 'Melee Attack: bite +2 (1d6-1 plus poison) Damage <br/>Poison (EX) Bite—injury; save Fort DC 13; \
                 frequency 1/round for 6 rounds; effect 1d3 Dex damage; cure 1 save. The save DC is Constitution-based \
@@ -727,8 +727,8 @@ data['monsters'].append({
                 two long, feathery antennae.',
     'saves': {'FORT': 2, 'REF': 4, 'WILL': 5},
     'attacks': [
-        ['basic melee', '', 'bite', '+6', '1d3', '', '5ft'],
-        ['basic melee', '', 'atennae', '+6 touch', 'Rust', '', '5ft']
+        ['basic melee', 'weapons_bite-128.png', 'bite', '+6', '1d3', '', '5ft'],
+        ['basic melee', 'weapons_bite-128.png', 'atennae', '+6 touch', 'Rust', '', '5ft']
     ],
     'crunch': 'Melee Attack: bite +6 (1d3) Damage, antennae +6 touch (rust) <br/>Rust: The object touched takes half \
                 its maximum hp in damage and gains the broken condition—a second hit destroys the item.'
@@ -758,7 +758,7 @@ data['monsters'].append({
     'favor': 'A spider the size of a man crawls silently from the depths of its funnel-shaped web.',
     'saves': {'FORT': 4, 'REF': 4, 'WILL': 1},
     'attacks': [
-        ['basic melee', '', 'bite', '+2', '1d6 (poison)', '', '5ft']
+        ['basic melee', 'weapons_bite-128.png', 'bite', '+2', '1d6 (poison)', '', '5ft']
     ],
     'crunch': 'Melee Attack: bite+2 attack, 1d6 Damage + poison <br/>Special Attack Web +5 ranged, DC12 hp 2<br/>\
                 Poison (Ex) Bite—injury; save Fort DC 14; frequency 1/round for 4 rounds; effect 1d2 Strength \
@@ -790,7 +790,7 @@ data['monsters'].append({
                 two glittering eyes.',
     'saves': {'FORT': 3, 'REF': 5, 'WILL': 1},
     'attacks': [
-        ['basic melee', '', 'bite', '+1', '1d4 (disease)', '', '5ft']
+        ['basic melee', 'weapons_bite-128.png', 'bite', '+1', '1d4 (disease)', '', '5ft']
     ],
     'crunch': 'Melee Attack: bite+1 attack, 1d4+disease Damage<br/>Disease (Ex) Filth fever: Bite—injury; save Fort \
                 DC 11; onset 1d3 days; frequency 1/day; effect 1d3 Dex damage and 1d3 Con damage; cure 2 consecutive \
@@ -824,7 +824,7 @@ data['monsters'].append({
                 often found in the sewers of large human settlements.',
     'saves': {'FORT': 4, 'REF': 5, 'WILL': 2},
     'attacks': [
-        ['basic melee', '', 'bite', 'swarm', '1d6 (disease)', '', '0ft']
+        ['basic melee', 'weapons_bite-128.png', 'bite', 'swarm', '1d6 (disease)', '', '0ft']
     ],
     'crunch': 'Melee swarm 1d6+disease Damage<br/>Swarm Defenses<br/>Disease (Ex) Filth fever: Bite—injury; save Fort \
                 DC 12; onset 1d3 days; frequency 1/day; effect 1d3 Dex damage and 1d3 Con damage; cure 2 consecutive \
@@ -856,7 +856,7 @@ data['monsters'].append({
                 burn.',
     'saves': {'FORT': 6, 'REF': 7, 'WILL': 1},
     'attacks': [
-        ['basic melee', '', 'slam', '+7', '1d6 (burn)', '', '5ft']
+        ['basic melee', 'weapons_bite-128.png', 'slam', '+7', '1d6 (burn)', '', '5ft']
     ],
     'crunch': 'Melee: Slam +7 (1d6+1 plus burn)<br/>Special Attacks: Burn (1d6 DC14)<br/>Immune Fire; Elemental \
                 traits<br/>Vulnerable to Cold'
@@ -886,7 +886,7 @@ data['monsters'].append({
     'favor': 'This translucent creatures shape shifts between a spinning column of water and a crashing wave.',
     'saves': {'FORT': 6, 'REF': 7, 'WILL': 1},
     'attacks': [
-        ['basic melee', '', 'slam', '+7', '1d8+4', '', '5ft']
+        ['basic melee', 'weapons_bite-128.png', 'slam', '+7', '1d8+4', '', '5ft']
     ],
     'crunch': 'Melee: Slam +7 (1d8+4)<br/>Special Attacks: drench, vortex (DC15), water mastery <br/>Immune Elemental \
                 traits<br/>Feats: Power Attack, Cleave'
@@ -917,7 +917,7 @@ data['monsters'].append({
                 two glowing gemstone eyes.',
     'saves': {'FORT': 6, 'REF': 7, 'WILL': 1},
     'attacks': [
-        ['basic melee', '', 'slam', '+9', '1d8+7', '', '5ft']
+        ['basic melee', 'weapons_bite-128.png', 'slam', '+9', '1d8+7', '', '5ft']
     ],
     'crunch': 'Melee: Slam +9 (1d8+7)<br/>Special Attacks: earth mastery <br/>Immune Elemental \
                 traits<br/>Feats: Power Attack, Cleave, Improved Bull Rush'
@@ -948,7 +948,7 @@ data['monsters'].append({
                 cube of slime.',
     'saves': {'FORT': 9, 'REF': -4, 'WILL': -4},
     'attacks': [
-        ['basic melee', '', 'slam', '+2', '1d6 (1d6 Acid)', '', '5ft']
+        ['basic melee', 'weapons_bite-128.png', 'slam', '+2', '1d6 (1d6 Acid)', '', '5ft']
     ],
     'crunch': 'Melee: Slam +2 (1d6+1d6 Acid)<br/>Special Attacks: engulf, paralysis <br/>Immune electricity, ooze  \
                 traits'
@@ -978,7 +978,7 @@ data['monsters'].append({
     'favor': 'This insectoid creature has two pairs of bat wings, a tangle of thin legs, and a needle-sharp proboscis.',
     'saves': {'FORT': 2, 'REF': 6, 'WILL': 1},
     'attacks': [
-        ['basic melee', '', 'attach', '+7 touch', 'blood drain', '', '5ft']
+        ['basic melee', 'weapons_bite-128.png', 'attach', '+7 touch', 'blood drain', '', '5ft']
     ],
     'crunch': 'Melee: touch +7 (attach)<br/>Special Attacks: blood drain<br/>Diseased(Ex)'
 })
